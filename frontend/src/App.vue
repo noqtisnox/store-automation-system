@@ -1,6 +1,9 @@
 <template>
     <div>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+        <nav
+            v-if="$route.name !== 'login'"
+            class="navbar navbar-expand-lg navbar-dark bg-dark mb-4"
+        >
             <div class="container-fluid">
                 <span class="navbar-brand border-end pe-3 me-3"
                     >🏪 Store AutoSys</span
@@ -14,6 +17,14 @@
                         >History</RouterLink
                     >
                 </div>
+                <div class="d-flex">
+                    <button
+                        class="btn btn-outline-light btn-sm"
+                        @click="logout"
+                    >
+                        Logout
+                    </button>
+                </div>
             </div>
         </nav>
 
@@ -24,10 +35,13 @@
 </template>
 
 <script setup>
-import { RouterLink, RouterView } from "vue-router";
-</script>
+import { RouterLink, RouterView, useRouter } from "vue-router";
 
-<style>
-/* You can drop your Bootstrap CDN link in the main index.html file
-   so you don't have to install the whole library locally */
-</style>
+const router = useRouter();
+
+const logout = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("role");
+    router.push("/login");
+};
+</script>

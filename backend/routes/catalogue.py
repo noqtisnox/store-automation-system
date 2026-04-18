@@ -3,17 +3,26 @@ from fastapi import APIRouter, Depends, HTTPException
 from models import Product
 from sqlmodel import Session, select
 
+from routes.auth import User, get_current_user, require_manager
+
 router = APIRouter()
 
 
 @router.get("/products", response_model=list[Product])
-def get_products(session: Session = Depends(get_session)):
+def get_products(
+    session: Session = Depends(get_session),
+    current_user: User = Depends(get_current_user),
+):
     products = session.exec(select(Product)).all()
     return products
 
 
 @router.post("/products", response_model=Product)
-def create_product(product: Product, session: Session = Depends(get_session)):
+def create_product(
+    product: Product,
+    session: Session = Depends(get_session),
+    manager: User = Depends(require_manager),
+):
     session.add(product)
     session.commit()
     session.refresh(product)

@@ -4,11 +4,11 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
-      path: "/",
-      name: "pos",
-      // We use component lazy-loading so the app loads faster
-      component: () => import("@/views/PosView.vue"),
+      path: "/login",
+      name: "login",
+      component: () => import("@/views/LoginView.vue"),
     },
+    { path: "/", name: "pos", component: () => import("@/views/PosView.vue") },
     {
       path: "/catalogue",
       name: "catalogue",
@@ -20,6 +20,18 @@ const router = createRouter({
       component: () => import("@/views/HistoryView.vue"),
     },
   ],
+});
+
+router.beforeEach((to, from, next) => {
+  const isAuthenticated = !!localStorage.getItem("token");
+
+  if (to.name !== "login" && !isAuthenticated) {
+    next({ name: "login" });
+  } else if (to.name === "login" && isAuthenticated) {
+    next({ name: "pos" });
+  } else {
+    next();
+  }
 });
 
 export default router;
