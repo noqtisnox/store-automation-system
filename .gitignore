@@ -54,3 +54,5 @@ venv/
 *.sqlite3
 *.db
 *.db-journal
+
+dev-dist/
