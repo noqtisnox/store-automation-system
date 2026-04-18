@@ -10,7 +10,9 @@
     "format": "oxfmt src/"
   },
   "dependencies": {
-    "vue": "beta"
+    "chart.js": "^4.5.1",
+    "vue": "beta",
+    "vue-chartjs": "^5.3.3"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^6.0.5",

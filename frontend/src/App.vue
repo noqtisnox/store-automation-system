@@ -1,9 +1,6 @@
 <template>
     <div>
-        <nav
-            v-if="$route.name !== 'login'"
-            class="navbar navbar-expand-lg navbar-dark bg-dark mb-4"
-        >
+        <nav v-if="$route.name !== 'login'" class="navbar navbar-expand-lg navbar-dark bg-dark mb-4 d-print-none">
             <div class="container-fluid">
                 <span class="navbar-brand border-end pe-3 me-3"
                     >🏪 Store AutoSys</span
@@ -16,6 +13,7 @@
                     <RouterLink class="nav-link" to="/history"
                         >History</RouterLink
                     >
+                    <RouterLink class="nav-link" to="/dashboard">Dashboard</RouterLink>
                 </div>
                 <div class="d-flex">
                     <button
