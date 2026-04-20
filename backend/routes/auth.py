@@ -3,11 +3,11 @@ from datetime import datetime, timedelta, timezone
 
 import bcrypt
 import jwt
-from database import get_session
+from db.database import get_session
 from dotenv import load_dotenv
 from fastapi import APIRouter, Depends, HTTPException
 from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
-from models import User
+from models.user import User
 from sqlmodel import Session, select
 
 router = APIRouter()

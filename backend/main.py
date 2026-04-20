@@ -1,6 +1,6 @@
 from contextlib import asynccontextmanager
 
-from database import create_db_and_tables
+from db.database import create_db_and_tables
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from routes import auth, catalogue, pos
@@ -12,7 +12,7 @@ from sqlmodel import Session, select
 async def lifespan(app: FastAPI):
     create_db_and_tables()
     # Seed a default manager if none exists
-    from database import engine
+    from db.database import engine
 
     with Session(engine) as session:
         if not session.exec(select(User)).first():

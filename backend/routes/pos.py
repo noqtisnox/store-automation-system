@@ -1,4 +1,4 @@
-from database import get_session
+from db.database import get_session
 from fastapi import APIRouter, Depends, HTTPException
 from models import CheckoutItem, Product, Transaction
 from sqlmodel import Session, select

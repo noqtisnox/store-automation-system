@@ -1,6 +1,8 @@
 from sqlmodel import Session, select
-from database import engine, create_db_and_tables
-from models import Product
+from .database import engine, create_db_and_tables
+from ..models import Product
+from ..models.user import User
+from ..routes.auth import get_password_hash
 
 
 initial_products = [
@@ -28,6 +30,16 @@ def seed_data():
             print("✅ Database successfully populated with initial inventory!")
         else:
             print("⚠️ Database already contains items. Skipping seed to protect existing data.")
+        
+        # Seed admin if not exists
+        if not session.exec(select(User)).first():
+            admin = User(
+                username="admin",
+                password_hash=get_password_hash("password123"),
+                role="manager",
+            )
+            session.add(admin)
+            session.commit()
 
 
 if __name__ == "__main__":

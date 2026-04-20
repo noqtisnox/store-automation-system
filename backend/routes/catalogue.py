@@ -1,6 +1,6 @@
-from database import get_session
+from db.database import get_session
 from fastapi import APIRouter, Depends, HTTPException
-from models import Product
+from models.product import Product
 from sqlmodel import Session, select
 
 from routes.auth import User, get_current_user, require_manager
