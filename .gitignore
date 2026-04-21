@@ -56,3 +56,5 @@ venv/
 *.db-journal
 
 dev-dist/
+
+.pytest_cache/

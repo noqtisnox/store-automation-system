@@ -3,11 +3,11 @@ from datetime import datetime, timedelta, timezone
 
 import bcrypt
 import jwt
-from database import get_session
+from db.database import get_session
 from dotenv import load_dotenv
 from fastapi import APIRouter, Depends, HTTPException
 from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
-from models import User
+from models.user import User
 from sqlmodel import Session, select
 
 router = APIRouter()
@@ -15,6 +15,10 @@ router = APIRouter()
 load_dotenv()
 
 SECRET_KEY = os.getenv("SECRET_KEY", "fallback_unsafe_key")
+if not SECRET_KEY:
+    raise RuntimeError(
+        "SECRET_KEY environment variable is not set. Please set it to a secure random value."
+    )
 ALGORITHM = os.getenv("ALGORITHM", "HS256")
 
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="login")
