@@ -31,7 +31,10 @@ def create_product(
 
 @router.patch("/products/{product_id}", response_model=Product)
 def patch_product(
-    product_id: int, product_update: dict, session: Session = Depends(get_session)
+    product_id: int,
+    product_update: dict,
+    session: Session = Depends(get_session),
+    manager: User = Depends(require_manager),
 ):
     # 1. Find the existing product in the DB
     db_product = session.get(Product, product_id)
@@ -50,7 +53,7 @@ def patch_product(
 
 
 @router.delete("/products/{product_id}")
-def delete_product(product_id: int, session: Session = Depends(get_session)):
+def delete_product(product_id: int, session: Session = Depends(get_session), manager: User = Depends(require_manager)):
     # 1. Find the product
     db_product = session.get(Product, product_id)
     if not db_product:

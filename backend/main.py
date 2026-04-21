@@ -1,11 +1,15 @@
+import os
 from contextlib import asynccontextmanager
 
 from db.database import create_db_and_tables
+from dotenv import load_dotenv
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from routes import auth, catalogue, pos
 from routes.auth import User, get_password_hash
 from sqlmodel import Session, select
+
+load_dotenv()
 
 
 @asynccontextmanager
@@ -15,14 +19,19 @@ async def lifespan(app: FastAPI):
     from db.database import engine
 
     with Session(engine) as session:
-        if not session.exec(select(User)).first():
-            admin = User(
-                username="admin",
-                password_hash=get_password_hash("password123"),
-                role="manager",
-            )
-            session.add(admin)
-            session.commit()
+        # Seed admin if not exists
+        admin_password = os.getenv("BOOTSTRAP_ADMIN_PASSWORD")
+        if admin_password:
+            if not session.exec(select(User)).first():
+                admin = User(
+                    username="admin",
+                    password_hash=get_password_hash(admin_password),
+                    role="manager",
+                )
+                session.add(admin)
+                session.commit()
+        else:
+            pass
     yield
 
 

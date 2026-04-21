@@ -15,6 +15,10 @@ router = APIRouter()
 load_dotenv()
 
 SECRET_KEY = os.getenv("SECRET_KEY", "fallback_unsafe_key")
+if not SECRET_KEY:
+    raise RuntimeError(
+        "SECRET_KEY environment variable is not set. Please set it to a secure random value."
+    )
 ALGORITHM = os.getenv("ALGORITHM", "HS256")
 
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="login")

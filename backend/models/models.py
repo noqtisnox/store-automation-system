@@ -1,6 +1,6 @@
-from .user import User
+from .checkout_item import CheckoutItem
 from .product import Product
 from .transaction import Transaction
-from .checkout_item import CheckoutItem
+from .user import User
 
-__all__ = ["User", "Product", "Transaction", "CheckoutItem"]
+__all__ = ["CheckoutItem", "Product", "Transaction", "User"]

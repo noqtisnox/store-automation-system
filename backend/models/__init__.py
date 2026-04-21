@@ -1,3 +1,3 @@
-from .models import User, Product, Transaction, CheckoutItem
+from .models import CheckoutItem, Product, Transaction, User
 
-__all__ = ["User", "Product", "Transaction", "CheckoutItem"]
+__all__ = ["CheckoutItem", "Product", "Transaction", "User"]
