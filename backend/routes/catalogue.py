@@ -1,9 +1,17 @@
 from db.database import get_session
 from fastapi import APIRouter, Depends, HTTPException
 from models.product import Product
-from sqlmodel import Session, select
+from sqlmodel import Session, select, SQLModel, Field
+from typing import Optional
 
 from routes.auth import User, get_current_user, require_manager
+
+
+class ProductUpdate(SQLModel):
+    name: Optional[str] = None
+    sku: Optional[str] = None
+    price_cents: Optional[int] = Field(default=None, gt=0)
+    quantity: Optional[int] = Field(default=None, ge=0)
 
 router = APIRouter()
 
@@ -32,7 +40,7 @@ def create_product(
 @router.patch("/products/{product_id}", response_model=Product)
 def patch_product(
     product_id: int,
-    product_update: dict,
+    product_update: ProductUpdate,
     session: Session = Depends(get_session),
     manager: User = Depends(require_manager),
 ):
@@ -41,9 +49,13 @@ def patch_product(
     if not db_product:
         raise HTTPException(status_code=404, detail="Product not found")
 
-    # 2. Apply only the provided updates
-    for key, value in product_update.items():
-        if hasattr(db_product, key):  # Safeguard against bad keys
+    # 2. Apply only the validated, provided updates
+    updates = product_update.dict(exclude_unset=True)
+    for key, value in updates.items():
+        # Prevent id changes explicitly
+        if key == "id":
+            continue
+        if hasattr(db_product, key):
             setattr(db_product, key, value)
 
     session.add(db_product)

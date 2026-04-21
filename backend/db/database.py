@@ -29,12 +29,10 @@ def create_db_and_tables():
         import models.product  # noqa: F401
         import models.transaction  # noqa: F401
         import models.checkout_item  # noqa: F401
-    except Exception:
-        # Fallback to backend.* package import paths
-        import backend.models.user  # noqa: F401
-        import backend.models.product  # noqa: F401
-        import backend.models.transaction  # noqa: F401
-        import backend.models.checkout_item  # noqa: F401
+    except ImportError as e:
+        # Surface import errors so failures are visible; do not attempt a
+        # secondary import that risks double-registration of SQLModel metadata.
+        raise
 
     SQLModel.metadata.create_all(get_engine())
 
