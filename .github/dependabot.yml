@@ -6,7 +6,7 @@ updates:
       interval: weekly
     open-pull-requests-limit: 10
   - package-ecosystem: github-actions
-    directory: "../api/ruby-rails"
+    directory: "/"
     schedule:
       interval: weekly
     open-pull-requests-limit: 10
