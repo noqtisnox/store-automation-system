@@ -1,0 +1,14 @@
+/home/nox/Desktop/uni/store-automation-system/backend/backend_axum/target/debug/deps/serde-4605b1948bc85f3e.d: /home/nox/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/lib.rs /home/nox/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/integer128.rs /home/nox/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/mod.rs /home/nox/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/de.rs /home/nox/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/ser.rs /home/nox/Desktop/uni/store-automation-system/backend/backend_axum/target/debug/build/serde-c43bd1b4f7af5940/out/private.rs
+
+/home/nox/Desktop/uni/store-automation-system/backend/backend_axum/target/debug/deps/libserde-4605b1948bc85f3e.rlib: /home/nox/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/lib.rs /home/nox/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/integer128.rs /home/nox/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/mod.rs /home/nox/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/de.rs /home/nox/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/ser.rs /home/nox/Desktop/uni/store-automation-system/backend/backend_axum/target/debug/build/serde-c43bd1b4f7af5940/out/private.rs
+
+/home/nox/Desktop/uni/store-automation-system/backend/backend_axum/target/debug/deps/libserde-4605b1948bc85f3e.rmeta: /home/nox/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/lib.rs /home/nox/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/integer128.rs /home/nox/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/mod.rs /home/nox/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/de.rs /home/nox/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/ser.rs /home/nox/Desktop/uni/store-automation-system/backend/backend_axum/target/debug/build/serde-c43bd1b4f7af5940/out/private.rs
+
+/home/nox/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/lib.rs:
+/home/nox/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/integer128.rs:
+/home/nox/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/mod.rs:
+/home/nox/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/de.rs:
+/home/nox/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/ser.rs:
+/home/nox/Desktop/uni/store-automation-system/backend/backend_axum/target/debug/build/serde-c43bd1b4f7af5940/out/private.rs:
+
+# env-dep:OUT_DIR=/home/nox/Desktop/uni/store-automation-system/backend/backend_axum/target/debug/build/serde-c43bd1b4f7af5940/out

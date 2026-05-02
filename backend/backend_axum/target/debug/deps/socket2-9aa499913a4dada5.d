@@ -1,0 +1,11 @@
+/home/nox/Desktop/uni/store-automation-system/backend/backend_axum/target/debug/deps/socket2-9aa499913a4dada5.d: /home/nox/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/socket2-0.5.10/src/lib.rs /home/nox/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/socket2-0.5.10/src/sockaddr.rs /home/nox/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/socket2-0.5.10/src/socket.rs /home/nox/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/socket2-0.5.10/src/sockref.rs /home/nox/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/socket2-0.5.10/src/sys/unix.rs
+
+/home/nox/Desktop/uni/store-automation-system/backend/backend_axum/target/debug/deps/libsocket2-9aa499913a4dada5.rlib: /home/nox/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/socket2-0.5.10/src/lib.rs /home/nox/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/socket2-0.5.10/src/sockaddr.rs /home/nox/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/socket2-0.5.10/src/socket.rs /home/nox/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/socket2-0.5.10/src/sockref.rs /home/nox/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/socket2-0.5.10/src/sys/unix.rs
+
+/home/nox/Desktop/uni/store-automation-system/backend/backend_axum/target/debug/deps/libsocket2-9aa499913a4dada5.rmeta: /home/nox/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/socket2-0.5.10/src/lib.rs /home/nox/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/socket2-0.5.10/src/sockaddr.rs /home/nox/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/socket2-0.5.10/src/socket.rs /home/nox/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/socket2-0.5.10/src/sockref.rs /home/nox/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/socket2-0.5.10/src/sys/unix.rs
+
+/home/nox/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/socket2-0.5.10/src/lib.rs:
+/home/nox/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/socket2-0.5.10/src/sockaddr.rs:
+/home/nox/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/socket2-0.5.10/src/socket.rs:
+/home/nox/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/socket2-0.5.10/src/sockref.rs:
+/home/nox/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/socket2-0.5.10/src/sys/unix.rs:

@@ -1,0 +1,12 @@
+/home/nox/Desktop/uni/store-automation-system/backend/backend_axum/target/debug/deps/async_trait-695c30dde04a324e.d: /home/nox/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-trait-0.1.89/src/lib.rs /home/nox/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-trait-0.1.89/src/args.rs /home/nox/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-trait-0.1.89/src/bound.rs /home/nox/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-trait-0.1.89/src/expand.rs /home/nox/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-trait-0.1.89/src/lifetime.rs /home/nox/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-trait-0.1.89/src/parse.rs /home/nox/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-trait-0.1.89/src/receiver.rs /home/nox/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-trait-0.1.89/src/verbatim.rs
+
+/home/nox/Desktop/uni/store-automation-system/backend/backend_axum/target/debug/deps/libasync_trait-695c30dde04a324e.so: /home/nox/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-trait-0.1.89/src/lib.rs /home/nox/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-trait-0.1.89/src/args.rs /home/nox/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-trait-0.1.89/src/bound.rs /home/nox/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-trait-0.1.89/src/expand.rs /home/nox/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-trait-0.1.89/src/lifetime.rs /home/nox/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-trait-0.1.89/src/parse.rs /home/nox/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-trait-0.1.89/src/receiver.rs /home/nox/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-trait-0.1.89/src/verbatim.rs
+
+/home/nox/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-trait-0.1.89/src/lib.rs:
+/home/nox/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-trait-0.1.89/src/args.rs:
+/home/nox/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-trait-0.1.89/src/bound.rs:
+/home/nox/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-trait-0.1.89/src/expand.rs:
+/home/nox/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-trait-0.1.89/src/lifetime.rs:
+/home/nox/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-trait-0.1.89/src/parse.rs:
+/home/nox/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-trait-0.1.89/src/receiver.rs:
+/home/nox/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-trait-0.1.89/src/verbatim.rs:

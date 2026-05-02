@@ -1,0 +1,11 @@
+/home/nox/Desktop/uni/store-automation-system/backend/backend_axum/target/debug/deps/serde_urlencoded-52fabd0932b249b9.d: /home/nox/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde_urlencoded-0.7.1/src/lib.rs /home/nox/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde_urlencoded-0.7.1/src/de.rs /home/nox/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde_urlencoded-0.7.1/src/ser/mod.rs /home/nox/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde_urlencoded-0.7.1/src/ser/key.rs /home/nox/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde_urlencoded-0.7.1/src/ser/pair.rs /home/nox/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde_urlencoded-0.7.1/src/ser/part.rs /home/nox/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde_urlencoded-0.7.1/src/ser/value.rs
+
+/home/nox/Desktop/uni/store-automation-system/backend/backend_axum/target/debug/deps/libserde_urlencoded-52fabd0932b249b9.rmeta: /home/nox/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde_urlencoded-0.7.1/src/lib.rs /home/nox/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde_urlencoded-0.7.1/src/de.rs /home/nox/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde_urlencoded-0.7.1/src/ser/mod.rs /home/nox/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde_urlencoded-0.7.1/src/ser/key.rs /home/nox/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde_urlencoded-0.7.1/src/ser/pair.rs /home/nox/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde_urlencoded-0.7.1/src/ser/part.rs /home/nox/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde_urlencoded-0.7.1/src/ser/value.rs
+
+/home/nox/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde_urlencoded-0.7.1/src/lib.rs:
+/home/nox/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde_urlencoded-0.7.1/src/de.rs:
+/home/nox/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde_urlencoded-0.7.1/src/ser/mod.rs:
+/home/nox/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde_urlencoded-0.7.1/src/ser/key.rs:
+/home/nox/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde_urlencoded-0.7.1/src/ser/pair.rs:
+/home/nox/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde_urlencoded-0.7.1/src/ser/part.rs:
+/home/nox/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde_urlencoded-0.7.1/src/ser/value.rs:
