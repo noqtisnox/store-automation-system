@@ -1,12 +1,13 @@
-from typing import Optional
+from typing import List, Optional
 
-from sqlmodel import Field, SQLModel
+from sqlmodel import Field, Relationship, SQLModel
 
 
 class Product(SQLModel, table=True):
     id: Optional[int] = Field(default=None, primary_key=True)
+    sku: str = Field(unique=True, index=True)
     name: str
-    sku: str = Field(index=True, unique=True)  # Stock Keeping Unit (Артикул)
-    # Store price in integer minor-units (cents) to avoid floating point issues
-    price_cents: int = Field(gt=0)
-    quantity: int = Field(default=0, ge=0)
+    price: float
+    quantity: int
+
+    transaction_items: List["TransactionItem"] = Relationship(back_populates="product")

@@ -10,7 +10,7 @@ from routes.auth import User, get_current_user, require_manager
 class ProductUpdate(SQLModel):
     name: Optional[str] = None
     sku: Optional[str] = None
-    price_cents: Optional[int] = Field(default=None, gt=0)
+    price: Optional[float] = Field(default=None, gt=0)
     quantity: Optional[int] = Field(default=None, ge=0)
 
 router = APIRouter()

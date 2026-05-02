@@ -14,16 +14,16 @@ initial_products = [
     Product(
         name="Matand Standard Rifle (1917 Pattern)",
         sku="WPN-M17",
-        price_cents=45000,
+        price=450.00,
         quantity=24,
     ),
     Product(
-        name="Refined Ignition Crystal", sku="ENG-CRY-01", price_cents=12000, quantity=150
+        name="Refined Ignition Crystal", sku="ENG-CRY-01", price=120.00, quantity=150
     ),
-    Product(name="Fortress Cog Lubricant", sku="ENG-LUB-05", price_cents=1550, quantity=80),
-    Product(name="Steel Tribe Rations", sku="SUP-RAT-30", price_cents=500, quantity=300),
-    Product(name="Gunpowder Keg (Grade A)", sku="WPN-GP-01", price_cents=4500, quantity=60),
-    Product(name="Wooden Horse", sku="TOY-WH-01", price_cents=4000, quantity=15),
+    Product(name="Fortress Cog Lubricant", sku="ENG-LUB-05", price=15.50, quantity=80),
+    Product(name="Steel Tribe Rations", sku="SUP-RAT-30", price=5.00, quantity=300),
+    Product(name="Gunpowder Keg (Grade A)", sku="WPN-GP-01", price=45.00, quantity=60),
+    Product(name="Wooden Horse", sku="TOY-WH-01", price=40.00, quantity=15),
 ]
 
 

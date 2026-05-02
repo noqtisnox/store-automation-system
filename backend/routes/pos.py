@@ -1,57 +1,68 @@
+from typing import List
+
 from db.database import get_session
 from fastapi import APIRouter, Depends, HTTPException
-from models import CheckoutItem, Product, Transaction
+from models import Product, Transaction, TransactionItem
+from pydantic import BaseModel
 from sqlmodel import Session, select
-from sqlalchemy import update as sa_update
+
+from routes.auth import User, get_current_user  # Assuming this is your auth import
 
 router = APIRouter()
 
 
+# Define what the Vue frontend is sending us
+class CartItem(BaseModel):
+    product_id: int
+    quantity_bought: int
+
+
 @router.post("/checkout")
 def process_checkout(
-    items: list[CheckoutItem], session: Session = Depends(get_session)
+    payload: List[CartItem],
+    session: Session = Depends(get_session),
+    current_user: User = Depends(get_current_user),
 ):
-    # Work in integer minor-units (cents)
-    total_cents = 0
-    summary_parts = []
-
-    # 1. Loop through items and perform atomic conditional updates
-    for item in items:
-        # 1a. Ensure the product exists and read name/price for summary
-        product = session.get(Product, item.product_id)
-        if not product:
-            raise HTTPException(
-                status_code=404, detail=f"Product ID {item.product_id} not found"
-            )
-
-        # 1b. Attempt an atomic update that only succeeds if enough quantity remains
-        stmt = (
-            sa_update(Product)
-            .where(Product.id == item.product_id, Product.quantity >= item.quantity_bought)
-            .values(quantity=(Product.quantity - item.quantity_bought))
-        )
-
-        result = session.exec(stmt)
-        # If no rows were updated, there wasn't enough stock
-        if result.rowcount == 0:
-            raise HTTPException(
-                status_code=400, detail=f"Not enough stock for {product.name}"
-            )
-
-        # Calculate totals and build summary for history (use cents)
-        total_cents += product.price_cents * item.quantity_bought
-        summary_parts.append(f"{item.quantity_bought}x {product.name}")
-
-    # 2. Save the transaction to history
-    new_transaction = Transaction(
-        total_amount_cents=total_cents, items_summary=", ".join(summary_parts)
-    )
+    # 1. Create the empty Transaction first so we get an ID
+    new_transaction = Transaction(user_id=current_user.id, total_amount=0.0)
     session.add(new_transaction)
+    session.commit()
+    session.refresh(new_transaction)
 
-    # 3. Commit everything to the database at once
+    total = 0.0
+
+    # 2. Process each item in the cart
+    for item in payload:
+        product = session.get(Product, item.product_id)
+
+        if not product or product.quantity < item.quantity_bought:
+            raise HTTPException(
+                status_code=400,
+                detail=f"Invalid stock for Product ID {item.product_id}",
+            )
+
+        # Deduct stock
+        product.quantity -= item.quantity_bought
+        session.add(product)
+
+        # Create the Line Item
+        line_item = TransactionItem(
+            transaction_id=new_transaction.id,
+            product_id=product.id,
+            quantity=item.quantity_bought,
+            price_at_sale=product.price,
+        )
+        session.add(line_item)
+
+        # Add to total
+        total += product.price * item.quantity_bought
+
+    # 3. Update the final total and save everything
+    new_transaction.total_amount = total
+    session.add(new_transaction)
     session.commit()
 
-    return {"message": "Checkout successful", "transaction_id": new_transaction.id}
+    return {"transaction_id": new_transaction.id, "message": "Checkout successful"}
 
 
 @router.get("/history", response_model=list[Transaction])
