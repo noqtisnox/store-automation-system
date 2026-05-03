@@ -180,3 +180,5 @@ venv/
 # Zed Editor
 # Ruby Language Server
 .ruby-lsp
+
+data/

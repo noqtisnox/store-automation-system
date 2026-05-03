@@ -3,6 +3,7 @@ import { Hono } from "hono";
 import { logger } from "hono/logger";
 import { prettyJSON } from "hono/pretty-json";
 import router from "./routes";
+import { migrate } from "./lib/migrate";
 
 const app = new Hono();
 
@@ -24,6 +25,8 @@ app.onError((err, c) => {
   console.error(err);
   return c.json({ message: err.message }, 500);
 });
+
+migrate();
 
 const server = serve({ fetch: app.fetch, port: 3000 }, (info) => {
   console.log(`Server running at http://localhost:${info.port}`);
