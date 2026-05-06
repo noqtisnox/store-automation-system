@@ -182,7 +182,9 @@ venv/
 .ruby-lsp
 .zed/
 
-data/
+shared/data.db
+shared/store.db
+
 # Logs
 logs
 *.log
